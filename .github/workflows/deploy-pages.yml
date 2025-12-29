@@ -34,7 +34,7 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Build JVM and Web distributions
-        run: ./gradlew :app:jvmJar :app:wasmJsBrowserDistribution --stacktrace
+        run: ./gradlew :app:wasmJsBrowserDistribution --stacktrace
 
       - name: Prepare Pages artifact
         run: |
