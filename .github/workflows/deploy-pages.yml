@@ -34,12 +34,12 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Build JVM and Web distributions
-        run: ./gradlew :app:wasmJsBrowserDistribution --stacktrace
+        run: ./gradlew :composeApp:wasmJsBrowserDistribution --stacktrace
 
       - name: Prepare Pages artifact
         run: |
           mkdir -p build/pages
-          cp -R app/build/dist/wasmJs/productionExecutable/* build/pages/
+          cp -R composeApp/build/dist/wasmJs/productionExecutable/* build/pages/
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
